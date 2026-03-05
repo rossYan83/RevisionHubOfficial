@@ -1690,6 +1690,23 @@ textarea:focus-visible {
     .form-container {
         padding: 1rem;
     }
+
+    /* Hide subject descriptions on small screens - keep only icon and name */
+    .subject-card p {
+        display: none;
+    }
+
+    .subject-card .boards {
+        display: none;
+    }
+
+    .subject-card-detailed p {
+        display: none;
+    }
+
+    .subject-meta {
+        display: none;
+    }
 }
 
 /* Smooth transitions for better perceived performance */

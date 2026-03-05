@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Resources - RevisionHub</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        /* Existing styles unchanged – consistent across all subjects */
+        .topics-list-section { max-width: 1400px; margin: 0 auto; padding: 0 3rem 2rem; }
+        .topics-list { background: rgba(255, 255, 255, 0.03); border-radius: 15px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.08); }
+        .topics-list h3 { font-size: 1.3rem; margin-bottom: 1rem; color: #5eb3f6; }
+        .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; }
+        .topic-tag { background: rgba(94, 179, 246, 0.1); padding: 0.6rem 1rem; border-radius: 8px; font-size: 0.95rem; color: rgba(255, 255, 255, 0.9); border: 1px solid rgba(94, 179, 246, 0.2); }
+        .main-content { max-width: 1400px; margin: 0 auto; padding: 0 3rem 4rem; }
+        .topic-card { background: rgba(255, 255, 255, 0.03); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 1.5rem; overflow: hidden; transition: all 0.3s; }
+        .topic-card:hover { border-color: rgba(94, 179, 246, 0.3); }
+        .topic-card-header { padding: 2rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .topic-info { display: flex; align-items: center; gap: 1.5rem; flex: 1; }
+        .topic-icon { font-size: 2.5rem; }
+        .topic-title h3 { font-size: 1.5rem; margin-bottom: 0.3rem; }
+        .topic-description { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; }
+        .view-more-btn { background: rgba(94, 179, 246, 0.15); color: #5eb3f6; padding: 0.7rem 1.5rem; border-radius: 8px; border: 1px solid rgba(94, 179, 246, 0.3); font-weight: 600; cursor: pointer; transition: all 0.3s; font-size: 0.95rem; }
+        .view-more-btn:hover { background: rgba(94, 179, 246, 0.25); }
+        .topic-card-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .topic-card-content.open { max-height: 300px; }
+        .topic-actions { padding: 0 2rem 2rem 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 200px; background: #5eb3f6; color: #0a0e27; padding: 1rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 600; text-align: center; transition: all 0.3s; border: none; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+        .action-btn:hover { background: #4a9de0; transform: translateY(-2px); }
+        .action-btn.secondary { background: rgba(94, 179, 246, 0.2); color: #5eb3f6; }
+        .action-btn.secondary:hover { background: rgba(94, 179, 246, 0.3); }
+        @media (max-width: 768px) {
+            .topics-list-section, .main-content { padding-left: 1.5rem; padding-right: 1.5rem; }
+            .topic-card-header { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+            .topic-info { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .topics-grid { grid-template-columns: 1fr; }
+            .action-btn { min-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <div class="brain-logo">RH</div>
+                <div class="logo-text">RevisionHub</div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/subjects.html">Subjects</a></li>
+                <li><a href="../pages/my-experience.html">My Experience</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/ask-me.html">Ask Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../pages/subjects.html">Subjects</a> / Physics
+    </div>
+
+    <div class="page-header">
+        <div class="subject-icon-large">⚛️</div>
+        <div class="header-content">
+            <h1>Physics</h1>
+            <p class="header-description">AQA GCSE Physics specification resources (Higher Tier)</p>
+            <div class="header-meta">
+                <span class="exam-board-badge">AQA</span>
+                <span class="topic-count">8 topics available</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="topics-list-section">
+        <div class="topics-list">
+            <h3>Topics Covered</h3>
+            <div class="topics-grid">
+                <div class="topic-tag">Energy</div>
+                <div class="topic-tag">Electricity</div>
+                <div class="topic-tag">Particle Model</div>
+                <div class="topic-tag">Atomic Structure</div>
+                <div class="topic-tag">Forces</div>
+                <div class="topic-tag">Waves</div>
+                <div class="topic-tag">Magnetism & Electromagnetism</div>
+                <div class="topic-tag">Space Physics</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="topic-card">
+            <div class="topic-card-header" onclick="toggleCard(this)">
+                <div class="topic-info">
+                    <span class="topic-icon">🔋</span>
+                    <div class="topic-title">
+                        <h3>Energy</h3>
+                        <p class="topic-description">Energy changes, conservation, dissipation, national & global resources, efficiency, power, specific heat capacity</p>
+                    </div>
+                </div>
+                <button class="view-more-btn">View More</button>
+            </div>
+            <div class="topic-card-content">
+                <div class="topic-actions">
+                    <a href="https://www.youtube.com/playlist?list=PL9IouNCPbCxW5j4o0kZ1Y1p1r0j5Z0Z0Z" target="_blank" class="action-btn">🎥 Free Science Lessons Playlist</a>
+                    <a href="https://www.physicsandmathstutor.com/physics-revision/gcse-aqa/energy/" target="_blank" class="action-btn secondary">📝 Practice Questions (PMT)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-card-header" onclick="toggleCard(this)">
+                <div class="topic-info">
+                    <span class="topic-icon">⚡</span>
+                    <div class="topic-title">
+                        <h3>Electricity</h3>
+                        <p class="topic-description">Current, potential difference, resistance, series/parallel circuits, domestic uses, safety, static electricity, energy transfers</p>
+                    </div>
+                </div>
+                <button class="view-more-btn">View More</button>
+            </div>
+            <div class="topic-card-content">
+                <div class="topic-actions">
+                    <a href="https://www.youtube.com/playlist?list=PL9IouNCPbCxXc2NQoIZN7-3jIKN7vW-Sq" target="_blank" class="action-btn">🎥 Free Science Lessons Playlist</a>
+                    <a href="https://www.physicsandmathstutor.com/physics-revision/gcse-aqa/electricity/" target="_blank" class="action-btn secondary">📝 Practice Questions (PMT)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-card-header" onclick="toggleCard(this)">
+                <div class="topic-info">
+                    <span class="topic-icon">🧊</span>
+                    <div class="topic-title">
+                        <h3>Particle Model of Matter</h3>
+                        <p class="topic-description">Changes of state, internal energy, specific latent heat, gas pressure, density, temperature changes</p>
+                    </div>
+                </div>
+                <button class="view-more-btn">View More</button>
+            </div>
+            <div class="topic-card-content">
+                <div class="topic-actions">
+                    <a href="https://www.youtube.com/playlist?list=PL9IouNCPbCxWdHszkb6n6503ommOpg_t7" target="_blank" class="action-btn">🎥 Free Science Lessons Playlist</a>
+                    <a href="https://www.physicsandmathstutor.com/physics-revision/gcse-aqa/particle-model-of-matter/" target="_blank" class="action-btn secondary">📝 Practice Questions (PMT)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-card-header" onclick="toggleCard(this)">
+                <div class="topic-info">
+                    <span class="topic-icon">☢️</span>
+                    <div class="topic-title">
+                        <h3>Atomic Structure</h3>
+                        <p class="topic-description">Atoms & isotopes, nuclear radiation, hazards & uses, radioactive decay, half-life, nuclear fission/fusion</p>
+                    </div>
+                </div>
+                <button class="view-more-btn">View More</button>
+            </div>
+            <div class="topic-card-content">
+                <div class="topic-actions">
+                    <a href="https://www.youtube.com/playlist?list=PL9IouNCPbCxXTU7zSX4IvJDLrtCEmqEMU" target="_blank" class="action-btn">🎥 Free Science Lessons Playlist</a>
+                    <a href="https://www.physicsandmathstutor.com/physics-revision/gcse-aqa/atomic-structure/" target="_blank" class="action-btn secondary">📝 Practice Questions (PMT)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-card-header" onclick="toggleCard(this)">
+                <div class="topic-info">
+                    <span class="topic-icon">🚀</span>
+                    <div class="topic-title">
+                        <h3>Forces</h3>
+                        <p class="topic-description">Forces & interactions, Newton's laws, momentum, elasticity, moments, pressure, motion graphs, terminal velocity</p>
+                    </div>
+                </div>
+                <button class="view-more-btn">View More</button>
+            </div>
+            <div class="topic-card-content">
+                <div class="topic-actions">
+                    <a href="https://www.youtube.com/playlist?list=PL9IouNCPbCxUrQkFLoPwB67nDbhw2NfAO" target="_blank" class="action-btn">🎥 Free Science Lessons Playlist</a>
+                    <a href="https://www.physicsandmathstutor.com/physics-revision/gcse-aqa/forces/" target="_blank" class="action-btn secondary">📝 Practice Questions (PMT)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-card-header" onclick="toggleCard(this)">
+                <div class="topic-info">
+                    <span class="topic-icon">🌊</span>
+                    <div class="topic-title">
+                        <h3>Waves</h3>
+                        <p class="topic-description">Wave properties, electromagnetic spectrum, reflection/refraction, sound, black body radiation, lenses</p>
+                    </div>
+                </div>
+                <button class="view-more-btn">View More</button>
+            </div>
+            <div class="topic-card-content">
+                <div class="topic-actions">
+                    <a href="https://www.youtube.com/playlist?list=PL9IouNCPbCxX1-0Nr5_bMDJnN-9RqMuA6" target="_blank" class="action-btn">🎥 Free Science Lessons Playlist</a>
+                    <a href="https://www.physicsandmathstutor.com/physics-revision/gcse-aqa/waves/" target="_blank" class="action-btn secondary">📝 Practice Questions (PMT)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-card-header" onclick="toggleCard(this)">
+                <div class="topic-info">
+                    <span class="topic-icon">🧲</span>
+                    <div class="topic-title">
+                        <h3>Magnetism and Electromagnetism</h3>
+                        <p class="topic-description">Permanent & induced magnetism, magnetic fields, motor effect, Fleming's left-hand rule, transformers, national grid</p>
+                    </div>
+                </div>
+                <button class="view-more-btn">View More</button>
+            </div>
+            <div class="topic-card-content">
+                <div class="topic-actions">
+                    <a href="https://www.youtube.com/results?search_query=free+science+lessons+gcse+physics+magnetism+electromagnetism+aqa" target="_blank" class="action-btn">🎥 Free Science Lessons Videos (Search)</a>
+                    <a href="https://www.physicsandmathstutor.com/physics-revision/gcse-aqa/magnetism-and-electromagnetism/" target="_blank" class="action-btn secondary">📝 Practice Questions (PMT)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-card-header" onclick="toggleCard(this)">
+                <div class="topic-info">
+                    <span class="topic-icon">🌌</span>
+                    <div class="topic-title">
+                        <h3>Space Physics</h3>
+                        <p class="topic-description">Solar system, orbital motion, satellites, stars & life cycle, red-shift, Big Bang theory, expanding universe</p>
+                    </div>
+                </div>
+                <button class="view-more-btn">View More</button>
+            </div>
+            <div class="topic-card-content">
+                <div class="topic-actions">
+                    <a href="https://www.youtube.com/results?search_query=free+science+lessons+gcse+physics+space+physics+aqa" target="_blank" class="action-btn">🎥 Free Science Lessons Videos (Search)</a>
+                    <a href="https://www.physicsandmathstutor.com/physics-revision/gcse-aqa/space-physics/" target="_blank" class="action-btn secondary">📝 Practice Questions (PMT)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 RevisionHub - Student EPQ Project</p>
+        <p>Helping students achieve their best in GCSE examinations — Videos by Free Science Lessons • Practice from Physics & Maths Tutor</p>
+        <p>All content belongs to their respective creators</p>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/accordion.js"></script>
+</body>
+</html>

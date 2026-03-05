@@ -8,6 +8,9 @@ function toggleMenu() {
     navLinks.classList.toggle('active');
     body.classList.toggle('menu-open');
     menuBtn.classList.toggle('active');
+    
+    // Improve accessibility
+    menuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
 }
 
 function closeMenu() {
@@ -17,12 +20,19 @@ function closeMenu() {
     navLinks.classList.remove('active');
     body.classList.remove('menu-open');
     menuBtn.classList.remove('active');
+    
+    // Improve accessibility
+    menuBtn.setAttribute('aria-expanded', 'false');
 }
 
 // Initialize mobile menu button
 document.addEventListener('DOMContentLoaded', function() {
     const menuBtn = document.getElementById('mobileMenuBtn');
     if (menuBtn) {
+        // Set initial accessible attribute
+        menuBtn.setAttribute('aria-label', 'Toggle navigation menu');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        
         menuBtn.addEventListener('click', toggleMenu);
     }
 
@@ -40,7 +50,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if (nav && menuBtn) {
             if (!nav.contains(event.target) && !menuBtn.contains(event.target)) {
                 nav.classList.remove('active');
+                menuBtn.setAttribute('aria-expanded', 'false');
             }
+        }
+    });
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeMenu();
         }
     });
 
@@ -48,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
+
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 target.scrollIntoView({

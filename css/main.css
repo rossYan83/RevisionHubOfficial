@@ -1523,7 +1523,6 @@ textarea:focus-visible {
     a.subject-card,
     a.subject-card-detailed {
         min-height: 48px;
-        display: flex;
         align-items: center;
         justify-content: center;
     }

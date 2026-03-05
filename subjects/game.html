@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Snake Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        canvas {
+            border: 2px solid #333;
+            background: #111;
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+        }
+        #score {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        #gameOver {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+        button {
+            background: #00BFFF;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #87CEEB;
+        }
+        .instructions {
+            margin-top: 20px;
+            text-align: center;
+            max-width: 400px;
+        }
+        body {
+    overflow: hidden;
+}
+    </style>
+</head>
+
+<body>
+    
+    <div id="score">Score: 0</div>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <div id="gameOver">
+        <h2>Game Over!</h2>
+        <p>Final Score: <span id="finalScore">0</span></p>
+        <button onclick="restartGame()">Play Again</button>
+    </div>
+    <div class="instructions">
+        Use arrow keys to move the glowing blue snake. Eat the 📚 books to grow!
+    </div>
+
+    <a href="../index.html"><button>Go Back</button></a>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const scoreElement = document.getElementById('score');
+        const gameOverElement = document.getElementById('gameOver');
+        const finalScoreElement = document.getElementById('finalScore');
+
+        const gridSize = 20;
+        const tileCount = canvas.width / gridSize;
+
+        let snake = [
+            {x: 10, y: 10}
+        ];
+        let dx = 0;
+        let dy = 0;
+        let foodX;
+        let foodY;
+        let score = 0;
+        let gameRunning = true;
+
+        // Place initial food
+        function randomFood() {
+            foodX = Math.floor(Math.random() * tileCount);
+            foodY = Math.floor(Math.random() * tileCount);
+        }
+        randomFood();
+
+        document.addEventListener('keydown', changeDirection);
+
+        function changeDirection(event) {
+            const LEFT_KEY = 37;
+            const RIGHT_KEY = 39;
+            const UP_KEY = 38;
+            const DOWN_KEY = 40;
+
+            const keyPressed = event.keyCode;
+            const goingUp = dy === -1;
+            const goingDown = dy === 1;
+            const goingRight = dx === 1;
+            const goingLeft = dx === -1;
+
+            if (keyPressed === LEFT_KEY && !goingRight) {
+                dx = -1;
+                dy = 0;
+            }
+            if (keyPressed === UP_KEY && !goingDown) {
+                dx = 0;
+                dy = -1;
+            }
+            if (keyPressed === RIGHT_KEY && !goingLeft) {
+                dx = 1;
+                dy = 0;
+            }
+            if (keyPressed === DOWN_KEY && !goingUp) {
+                dx = 0;
+                dy = 1;
+            }
+        }
+
+        function drawGame() {
+            // Clear canvas
+            ctx.fillStyle = '#111';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            if (!gameRunning) return;
+
+            // Move snake
+            const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+            snake.unshift(head);
+
+            // Check food collision
+            if (head.x === foodX && head.y === foodY) {
+                score += 10;
+                scoreElement.textContent = `Score: ${score}`;
+                randomFood();
+            } else {
+                snake.pop();
+            }
+
+            // Check wall collision
+            if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount) {
+                gameOver();
+                return;
+            }
+
+            // Check self collision
+            for (let segment of snake.slice(1)) {
+                if (head.x === segment.x && head.y === segment.y) {
+                    gameOver();
+                    return;
+                }
+            }
+
+            // Draw glowing snake (light blue glow)
+            ctx.shadowColor = '#00BFFF'; // Light blue glow
+            ctx.shadowBlur = 15;
+            ctx.fillStyle = '#87CEEB'; // Light blue
+            ctx.strokeStyle = '#00BFFF';
+            ctx.lineWidth = 2;
+            for (let segment of snake) {
+                ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize - 2, gridSize - 2);
+                ctx.strokeRect(segment.x * gridSize, segment.y * gridSize, gridSize - 2, gridSize - 2);
+            }
+            ctx.shadowBlur = 0; // Reset glow
+
+            // Draw book food (📚 icon)
+            ctx.font = 'bold 24px Arial';
+            ctx.fillStyle = '#FF69B4'; // Pinkish for visibility
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('📚', foodX * gridSize + gridSize / 2, foodY * gridSize + gridSize / 2);
+
+            setTimeout(drawGame, 150); // Game speed
+        }
+
+        function gameOver() {
+            gameRunning = false;
+            finalScoreElement.textContent = score;
+            gameOverElement.style.display = 'block';
+        }
+
+        function restartGame() {
+            snake = [{x: 10, y: 10}];
+            dx = 0;
+            dy = 0;
+            score = 0;
+            scoreElement.textContent = `Score: ${score}`;
+            randomFood();
+            gameRunning = true;
+            gameOverElement.style.display = 'none';
+            drawGame();
+        }
+
+        // Start game
+        drawGame();
+    </script>
+</body>
+</html>

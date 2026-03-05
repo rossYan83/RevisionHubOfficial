@@ -1,6 +1,5 @@
 
 
-// Mobile Menu Toggle
 function toggleMenu() {
     const navLinks = document.getElementById('navLinks');
     const body = document.body;
@@ -9,7 +8,6 @@ function toggleMenu() {
     body.classList.toggle('menu-open');
     menuBtn.classList.toggle('active');
     
-    // Improve accessibility
     menuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
 }
 
@@ -21,28 +19,23 @@ function closeMenu() {
     body.classList.remove('menu-open');
     menuBtn.classList.remove('active');
     
-    // Improve accessibility
     menuBtn.setAttribute('aria-expanded', 'false');
 }
 
-// Initialize mobile menu button
 document.addEventListener('DOMContentLoaded', function() {
     const menuBtn = document.getElementById('mobileMenuBtn');
     if (menuBtn) {
-        // Set initial accessible attribute
         menuBtn.setAttribute('aria-label', 'Toggle navigation menu');
         menuBtn.setAttribute('aria-expanded', 'false');
         
         menuBtn.addEventListener('click', toggleMenu);
     }
 
-    // Close menu when clicking a link
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach(link => {
         link.addEventListener('click', closeMenu);
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', function(event) {
         const nav = document.getElementById('navLinks');
         const menuBtn = document.getElementById('mobileMenuBtn');
@@ -55,14 +48,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Close menu on Escape key
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             closeMenu();
         }
     });
 
-    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -77,11 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Set active navigation link based on current page
     setActiveNavLink();
 });
-
-// Set active navigation link
 function setActiveNavLink() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-links a');

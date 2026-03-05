@@ -25,7 +25,6 @@
                 }
             });
             
-            // Announce to screen readers
             const announcement = `Showing ${visibleCount} subject${visibleCount !== 1 ? 's' : ''}`;
             const ariaLive = document.querySelector('[aria-live]');
             if (!ariaLive) {

@@ -10,36 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
     <style>
-        /* Existing styles unchanged – consistent across all subjects */
-        .topics-list-section { max-width: 1400px; margin: 0 auto; padding: 0 3rem 2rem; }
-        .topics-list { background: rgba(255, 255, 255, 0.03); border-radius: 15px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.08); }
-        .topics-list h3 { font-size: 1.3rem; margin-bottom: 1rem; color: #5eb3f6; }
-        .topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; }
-        .topic-tag { background: rgba(94, 179, 246, 0.1); padding: 0.6rem 1rem; border-radius: 8px; font-size: 0.95rem; color: rgba(255, 255, 255, 0.9); border: 1px solid rgba(94, 179, 246, 0.2); }
-        .main-content { max-width: 1400px; margin: 0 auto; padding: 0 3rem 4rem; }
-        .topic-card { background: rgba(255, 255, 255, 0.03); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 1.5rem; overflow: hidden; transition: all 0.3s; }
-        .topic-card:hover { border-color: rgba(94, 179, 246, 0.3); }
-        .topic-card-header { padding: 2rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .topic-info { display: flex; align-items: center; gap: 1.5rem; flex: 1; }
-        .topic-icon { font-size: 2.5rem; }
-        .topic-title h3 { font-size: 1.5rem; margin-bottom: 0.3rem; }
-        .topic-description { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; }
-        .view-more-btn { background: rgba(94, 179, 246, 0.15); color: #5eb3f6; padding: 0.7rem 1.5rem; border-radius: 8px; border: 1px solid rgba(94, 179, 246, 0.3); font-weight: 600; cursor: pointer; transition: all 0.3s; font-size: 0.95rem; }
-        .view-more-btn:hover { background: rgba(94, 179, 246, 0.25); }
-        .topic-card-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-        .topic-card-content.open { max-height: 300px; }
-        .topic-actions { padding: 0 2rem 2rem 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
-        .action-btn { flex: 1; min-width: 200px; background: #5eb3f6; color: #0a0e27; padding: 1rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 600; text-align: center; transition: all 0.3s; border: none; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
-        .action-btn:hover { background: #4a9de0; transform: translateY(-2px); }
-        .action-btn.secondary { background: rgba(94, 179, 246, 0.2); color: #5eb3f6; }
-        .action-btn.secondary:hover { background: rgba(94, 179, 246, 0.3); }
-        @media (max-width: 768px) {
-            .topics-list-section, .main-content { padding-left: 1.5rem; padding-right: 1.5rem; }
-            .topic-card-header { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
-            .topic-info { flex-direction: column; align-items: flex-start; gap: 1rem; }
-            .topics-grid { grid-template-columns: 1fr; }
-            .action-btn { min-width: 100%; }
-        }
+
     </style>
 </head>
 <body>

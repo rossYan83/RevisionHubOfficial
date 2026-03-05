@@ -1,8 +1,3 @@
-/* ===================================
-   RevisionHub - Main Stylesheet
-   =================================== */
-
-/* CSS Variables */
 :root {
     --bg-primary: #0a0e27;
     --accent-blue: #5eb3f6;
@@ -15,7 +10,6 @@
     --card-hover: rgba(255, 255, 255, 0.06);
 }
 
-/* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -31,7 +25,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Header & Navigation */
 header {
     background: rgba(10, 14, 39, 0.95);
     padding: 1.5rem 3rem;
@@ -106,7 +99,6 @@ nav {
     color: var(--accent-blue);
 }
 
-/* Responsive Header Adjustments */
 @media (max-width: 1100px) {
     header {
         padding: 1.2rem 2rem;
@@ -145,7 +137,6 @@ nav {
     }
 }
 
-/* Hero Section */
 .hero {
     max-width: 1400px;
     margin: 0 auto;
@@ -245,7 +236,6 @@ nav {
     line-height: 1.6;
 }
 
-/* Subjects Section */
 .subjects-section {
     max-width: 1400px;
     margin: 4rem auto;
@@ -309,7 +299,6 @@ nav {
     font-weight: 600;
 }
 
-/* Breadcrumb */
 .breadcrumb {
     max-width: 1400px;
     margin: 0 auto;
@@ -323,7 +312,6 @@ nav {
     text-decoration: none;
 }
 
-/* Page Header */
 .page-header {
     max-width: 1400px;
     margin: 0 auto;
@@ -367,7 +355,6 @@ nav {
     color: var(--text-muted);
 }
 
-/* Footer */
 footer {
     background: rgba(0, 0, 0, 0.3);
     text-align: center;
@@ -381,7 +368,6 @@ footer p {
     margin-bottom: 0.5rem;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
     .hero {
         grid-template-columns: 1fr;
@@ -453,7 +439,6 @@ footer p {
         pointer-events: auto;
     }
 
-    /* Menu item animations */
     .nav-links li {
         transform: translateX(-30px);
         opacity: 0;
@@ -1501,11 +1486,6 @@ p {
             .video-card iframe { height: 160px; }
         }
 
-/* ===================================
-   Accessibility & Enhanced UX
-   =================================== */
-
-/* Focus states for all interactive elements */
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
@@ -1515,7 +1495,6 @@ textarea:focus-visible {
     outline-offset: 2px;
 }
 
-/* Mobile-optimized touch targets */
 @media (max-width: 768px) {
     button,
     .action-btn,
@@ -1527,7 +1506,6 @@ textarea:focus-visible {
         justify-content: center;
     }
 
-    /* Improve spacing on mobile */
     .topics-grid {
         gap: 0.5rem;
     }
@@ -1541,18 +1519,15 @@ textarea:focus-visible {
         font-size: 2rem;
     }
 
-    /* Better mobile card padding */
     .subject-card {
         padding: 1.5rem;
     }
 
-    /* Improve accordion button visibility */
     .view-more-btn {
         padding: 0.8rem 1.2rem;
         min-height: 44px;
     }
 
-    /* Better spacing for action buttons */
     .topic-actions {
         gap: 0.8rem;
         flex-direction: column;
@@ -1564,7 +1539,6 @@ textarea:focus-visible {
     }
 }
 
-/* Ultra-mobile responsive (below 480px) */
 @media (max-width: 480px) {
     header {
         padding: 0.8rem 1rem;
@@ -1596,7 +1570,6 @@ textarea:focus-visible {
         font-size: 0.9rem;
     }
 
-    /* Stack buttons on very small screens */
     .exam-boards {
         flex-direction: column;
         width: 100%;
@@ -1607,7 +1580,6 @@ textarea:focus-visible {
         text-align: center;
     }
 
-    /* Mobile horizontal scroll fixes */
     .hero {
         padding: 1.5rem 1rem;
     }
@@ -1661,7 +1633,6 @@ textarea:focus-visible {
         padding: 1.2rem;
     }
 
-    /* Ensure no text overflow on mobile */
     h1, h2, h3, h4, h5, h6 {
         word-wrap: break-word;
         overflow-wrap: break-word;
@@ -1672,7 +1643,6 @@ textarea:focus-visible {
         overflow-wrap: break-word;
     }
 
-    /* Additional mobile optimizations */
     .useful-videos {
         padding: 0 1rem;
         margin: 2rem auto;
@@ -1690,7 +1660,6 @@ textarea:focus-visible {
         padding: 1rem;
     }
 
-    /* Hide subject descriptions on small screens - keep only icon and name */
     .subject-card p {
         display: none;
     }
@@ -1708,25 +1677,20 @@ textarea:focus-visible {
     }
 }
 
-/* Smooth transitions for better perceived performance */
 html {
     scroll-behavior: smooth;
 }
 
-/* Improved readability on all devices */
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ensure responsive media */
 img, iframe, video {
     max-width: 100%;
     height: auto;
-    display: block;
 }
 
-/* Better hover states for large screens */
 @media (hover: hover) and (pointer: fine) {
     .subject-card,
     .subject-card-detailed,
@@ -1736,7 +1700,6 @@ img, iframe, video {
     }
 }
 
-/* Screen reader only content */
 .sr-only {
     position: absolute;
     width: 1px;

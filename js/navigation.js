@@ -3,12 +3,20 @@
 // Mobile Menu Toggle
 function toggleMenu() {
     const navLinks = document.getElementById('navLinks');
+    const body = document.body;
+    const menuBtn = document.getElementById('mobileMenuBtn');
     navLinks.classList.toggle('active');
+    body.classList.toggle('menu-open');
+    menuBtn.classList.toggle('active');
 }
 
 function closeMenu() {
     const navLinks = document.getElementById('navLinks');
+    const body = document.body;
+    const menuBtn = document.getElementById('mobileMenuBtn');
     navLinks.classList.remove('active');
+    body.classList.remove('menu-open');
+    menuBtn.classList.remove('active');
 }
 
 // Initialize mobile menu button

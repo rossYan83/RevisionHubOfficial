@@ -10,7 +10,7 @@
 
 .logo-loader {
   width: 220px;
-  animation: float 2xs ease-in-out infinite;
+  animation: float 2s ease-in-out infinite;
 }
 
 .logo-svg {
@@ -22,8 +22,8 @@
   fill: none;
   stroke: #5ecbff;
   stroke-width: 3;
-  filter: drop-shadow(0 0 15px #5ecbff);
-  animation: rotate 4s linear infinite;
+  filter: drop-shadow(0 0 8px #5ecbff);
+  animation: rotate 3s linear infinite;
 }
 
 .brain-outline {
@@ -46,7 +46,7 @@
   font-family: Arial, sans-serif;
   opacity: 0;
   filter: drop-shadow(0 0 20px #5ecbff);
-  animation: textFade 1s ease forwards 2s;
+  animation: textFade 0.5s ease forwards 1s;
 }
 
 @keyframes drawBrain {

@@ -1786,3 +1786,10 @@ img, iframe, video {
             border: 1px solid rgba(0, 191, 255, 0.4);
         }
         }
+
+        .personal-tips {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        border-radius: 10px;
+    }

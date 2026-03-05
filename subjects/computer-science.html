@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="../assets/images/logo.png">
+
+    <title>Computer Science Resources - RevisionHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <div class="brain-logo">RH</div>
+                <div class="logo-text">RevisionHub</div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/subjects.html">Subjects</a></li>
+                <li><a href="../pages/my-experience.html">My Experience</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/ask-me.html">Ask Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../pages/subjects.html">Subjects</a> / Computer Science
+    </div>
+
+    <div class="page-header">
+        <div class="subject-icon-large">💻</div>
+        <div class="header-content">
+            <h1>Computer Science</h1>
+            <p class="header-description">OCR GCSE Computer Science (J277) specification resources</p>
+            <div class="header-meta">
+                <span class="exam-board-badge">OCR</span>
+                <span class="topic-count">8 topics available</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="topics-list-section">
+        <div class="topics-list">
+            <h3>Topics Covered</h3>
+            <div class="topics-grid">
+                <div class="topic-tag">Systems Architecture</div>
+                <div class="topic-tag">Memory & Storage</div>
+                <div class="topic-tag">Networks & Security</div>
+                <div class="topic-tag">Ethical & Legal Impacts</div>
+                <div class="topic-tag">Algorithms</div>
+                <div class="topic-tag">Programming Fundamentals</div>
+                <div class="topic-tag">Data Representation</div>
+                <div class="topic-tag">Logic & Programming Languages</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="topic-card">
+            <div class="topic-card-header" onclick="toggleCard(this)">
+                <div class="topic-info">
+                    <span class="topic-icon">🧠</span>
+                    <div class="topic-title">
+                        <h3>Systems Architecture</h3>
+                        <p class="topic-description">CPU components, fetch-execute cycle, registers, cache, Von Neumann architecture, embedded systems</p>
+                    </div>
+                </div>
+                <button class="view-more-btn">View More</button>
+            </div>
+            <div class="topic-card-content">
+                <div class="topic-actions">
+                    <a href="https://craigndave.org/video-categories/slr1-1-systems-architecture/" target="_blank" class="action-btn">🎥 Craig 'n' Dave Playlist</a>
+                    <a href="https://www.csnewbs.com/ocr2020-1-1a-thecpu" target="_blank" class="action-btn">📚 CSNewbs Notes</a>
+                    <a href="https://www.physicsandmathstutor.com/computer-science-revision/gcse-ocr/computer-systems/" target="_blank" class="action-btn secondary">📝 PMT Questions & Notes</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-card-header" onclick="toggleCard(this)">
+                <div class="topic-info">
+                    <span class="topic-icon">💾</span>
+                    <div class="topic-title">
+                        <h3>Memory and Storage</h3>
+                        <p class="topic-description">Primary/secondary storage, RAM/ROM, virtual memory, units, compression, data storage technologies</p>
+                    </div>
+                </div>
+                <button class="view-more-btn">View More</button>
+            </div>
+            <div class="topic-card-content">
+                <div class="topic-actions">
+                    <a href="https://craigndave.org/video-categories/slr1-2-memory-and-storage/" target="_blank" class="action-btn">🎥 Craig 'n' Dave Playlist</a>
+                    <a href="https://www.csnewbs.com/ocr2020-2-1-primarystorage" target="_blank" class="action-btn">📚 CSNewbs Notes</a>
+                    <a href="https://www.physicsandmathstutor.com/computer-science-revision/gcse-ocr/computer-systems/" target="_blank" class="action-btn secondary">📝 PMT Questions & Notes</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-card-header" onclick="toggleCard(this)">
+                <div class="topic-info">
+                    <span class="topic-icon">🌐</span>
+                    <div class="topic-title">
+                        <h3>Networks, Connections & Security</h3>
+                        <p class="topic-description">Network types/topologies/protocols, wired/wireless, security threats, firewalls, encryption</p>
+                    </div>
+                </div>
+                <button class="view-more-btn">View More</button>
+            </div>
+            <div class="topic-card-content">
+                <div class="topic-actions">
+                    <a href="https://craigndave.org/video-categories/slr1-3-computer-networks-connections-and-protocols/" target="_blank" class="action-btn">🎥 Craig 'n' Dave Playlist</a>
+                    <a href="https://www.csnewbs.com/ocr2020-3-1a-networkperformance" target="_blank" class="action-btn">📚 CSNewbs Notes</a>
+                    <a href="https://www.physicsandmathstutor.com/computer-science-revision/gcse-ocr/computer-systems/" target="_blank" class="action-btn secondary">📝 PMT Questions & Notes</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-card-header" onclick="toggleCard(this)">
+                <div class="topic-info">
+                    <span class="topic-icon">⚖️</span>
+                    <div class="topic-title">
+                        <h3>Ethical, Legal, Cultural & Environmental Impacts</h3>
+                        <p class="topic-description">Digital divide, privacy, legislation (Data Protection Act, Computer Misuse Act), environmental impact</p>
+                    </div>
+                </div>
+                <button class="view-more-btn">View More</button>
+            </div>
+            <div class="topic-card-content">
+                <div class="topic-actions">
+                    <a href="https://craigndave.org/video-categories/slr1-6-ethical-legal-cultural-and-environmental-concerns/" target="_blank" class="action-btn">🎥 Craig 'n' Dave Playlist</a>
+                    <a href="https://www.csnewbs.com/ocr2020-6-1a-impactsoftechnology" target="_blank" class="action-btn">📚 CSNewbs Notes</a>
+                    <a href="https://www.physicsandmathstutor.com/computer-science-revision/gcse-ocr/computer-systems/" target="_blank" class="action-btn secondary">📝 PMT Questions & Notes</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-card-header" onclick="toggleCard(this)">
+                <div class="topic-info">
+                    <span class="topic-icon">🧩</span>
+                    <div class="topic-title">
+                        <h3>Algorithms & Computational Thinking</h3>
+                        <p class="topic-description">Abstraction, decomposition, algorithmic thinking, searching/sorting algorithms, pseudocode, flowcharts</p>
+                    </div>
+                </div>
+                <button class="view-more-btn">View More</button>
+            </div>
+            <div class="topic-card-content">
+                <div class="topic-actions">
+                    <a href="https://craigndave.org/video-categories/slr2-1-algorithms/" target="_blank" class="action-btn">🎥 Craig 'n' Dave Playlist</a>
+                    <a href="https://www.csnewbs.com/ocr2020-1-1-computationalthinking" target="_blank" class="action-btn">📚 CSNewbs Notes</a>
+                    <a href="https://www.physicsandmathstutor.com/computer-science-revision/gcse-ocr/computational-thinking-algorithms-and-programming/" target="_blank" class="action-btn secondary">📝 PMT Questions & Notes</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-card-header" onclick="toggleCard(this)">
+                <div class="topic-info">
+                    <span class="topic-icon">💻</span>
+                    <div class="topic-title">
+                        <h3>Programming Fundamentals</h3>
+                        <p class="topic-description">Variables/constants, data types, operators, sequence/selection/iteration, arrays, string manipulation, sub-programs</p>
+                    </div>
+                </div>
+                <button class="view-more-btn">View More</button>
+            </div>
+            <div class="topic-card-content">
+                <div class="topic-actions">
+                    <a href="https://craigndave.org/video-categories/slr2-2-programming-fundementals/" target="_blank" class="action-btn">🎥 Craig 'n' Dave Playlist</a>
+                    <a href="https://www.csnewbs.com/ocr2020-2-1-programfundamentals" target="_blank" class="action-btn">📚 CSNewbs Notes</a>
+                    <a href="https://www.physicsandmathstutor.com/computer-science-revision/gcse-ocr/computational-thinking-algorithms-and-programming/" target="_blank" class="action-btn secondary">📝 PMT Questions & Notes</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-card-header" onclick="toggleCard(this)">
+                <div class="topic-info">
+                    <span class="topic-icon">🔢</span>
+                    <div class="topic-title">
+                        <h3>Data Representation</h3>
+                        <p class="topic-description">Binary/denary/hex, binary shifts, characters (ASCII/Unicode), images/sound, compression (lossy/lossless)</p>
+                    </div>
+                </div>
+                <button class="view-more-btn">View More</button>
+            </div>
+            <div class="topic-card-content">
+                <div class="topic-actions">
+                    <a href="https://craigndave.org/video-categories/slr1-2-memory-and-storage/" target="_blank" class="action-btn">🎥 Craig 'n' Dave Playlist</a>
+                    <a href="https://www.csnewbs.com/ocr2020-2-4a-numbersystems" target="_blank" class="action-btn">📚 CSNewbs Notes</a>
+                    <a href="https://www.physicsandmathstutor.com/computer-science-revision/gcse-ocr/computational-thinking-algorithms-and-programming/" target="_blank" class="action-btn secondary">📝 PMT Questions & Notes</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-card-header" onclick="toggleCard(this)">
+                <div class="topic-info">
+                    <span class="topic-icon">🔧</span>
+                    <div class="topic-title">
+                        <h3>Logic, Translators & Programming Languages</h3>
+                        <p class="topic-description">Boolean logic, truth tables, programming paradigms, high/low-level languages, translators (compilers/interpreters)</p>
+                    </div>
+                </div>
+                <button class="view-more-btn">View More</button>
+            </div>
+            <div class="topic-card-content">
+                <div class="topic-actions">
+                    <a href="https://craigndave.org/video-categories/slr2-5-programming-languages-and-ides/" target="_blank" class="action-btn">🎥 Craig 'n' Dave Playlist</a>
+                    <a href="https://www.csnewbs.com/ocr2020-5-1-languagestranslators" target="_blank" class="action-btn">📚 CSNewbs Notes</a>
+                    <a href="https://www.physicsandmathstutor.com/computer-science-revision/gcse-ocr/computational-thinking-algorithms-and-programming/" target="_blank" class="action-btn secondary">📝 PMT Questions & Notes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 RevisionHub - Student EPQ Project</p>
+        <p>Helping students achieve their best in GCSE examinations — Videos by Craig 'n' Dave • Notes from CSNewbs • Questions from Physics & Maths Tutor</p>
+        <p>All content belongs to their respective creators</p>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/accordion.js"></script>
+</body>
+</html>

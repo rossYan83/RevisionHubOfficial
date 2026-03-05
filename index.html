@@ -4,35 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RevisionHub</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/loader.css">
 </head>
 <body>
+   <div class="loader-wrapper">
+  <div class="logo-loader">
+    <svg viewBox="0 0 200 200" class="logo-svg">
+
+      <!-- Outer ring -->
+      <circle cx="100" cy="100" r="85" class="outer-ring"/>
+
+      <!-- Brain outline -->
+     vg
+<path d="M70,80 
+           C60,70 50,90 60,105
+           C50,125 75,140 95,125
+           C110,140 135,135 130,110
+           C150,100 140,70 120,75
+           C120,60 95,39 90,70 
+           C85,58 70,60 70,80 Z"
+        class="brain-outline"/>
+
+      <!-- RH Text -->
+      <text x="100" y="110" text-anchor="middle" class="logo-text">
+        RH
+      </text>
+
+    </svg>
+  </div>
+</div>
     <header>
         <nav>
             <div class="logo-container">
                 <div class="brain-logo">RH</div>
-                <div class="logo-text">RevisingHub</div>
+                <div class="logo-text">RevisionHub</div>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="pages/subjects.html">Subjects</a></li>
-                <li><a href="pages/my-experience.html">My Experience</a></li>
-                <li><a href="pages/about.html">About</a></li>
-                <li><a href="pages/ask-me.html">Ask Me</a></li>
+                <li><a href="./index.html" class="active">Home</a></li>
+                <li><a href="./pages/subjects.html">Subjects</a></li>
+                <li><a href="./pages/my-experience.html">My Experience</a></li>
+                <li><a href="./pages/about.html">About</a></li>
+                <li><a href="./pages/ask-me.html">Ask Me</a></li>
             </ul>
             </div>
     </header>
 
-    <section class="main-content">
-        <div class="container">
-            
-        </div>
-    </section>
     <section class="hero">
         <div class="hero-content">
             <h1>
@@ -107,14 +129,37 @@
                 <div class="boards">OCR</div>
             </a>
 
+            <a href="subjects/game.html" class="subject-card">
+                <div class="subject-icon">𓆙</div>
+                <h3>Game</h3>
+                <p>Doing revision for longer than an hour is not effective, take a break for 5 minutes</p>
+            </a>
+
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 ReviseSmart - Student EPQ Project</p>
+        <p>&copy; 2026 RevisionHub - Student EPQ Project</p>
         <p>Helping students achieve their best in GCSE examinations</p>
     </footer>
+   
+    
+    <script>
+  window.addEventListener("load", function() {
+    const loader = document.querySelector(".loader-wrapper");
+
+    setTimeout(() => {
+      loader.style.opacity = "0";
+      loader.style.transition = "opacity 0.6s ease";
+
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 600);
+    }, 1800);
+  });
+</script>
 
     <script src="js/navigation.js"></script>
+    <script src="./js/fix.js"></script>
 </body>
 </html>

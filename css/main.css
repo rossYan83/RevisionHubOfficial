@@ -1,5 +1,5 @@
 /* ===================================
-   ReviseSmart - Main Stylesheet
+   RevisionHub - Main Stylesheet
    =================================== */
 
 /* CSS Variables */
@@ -907,4 +907,95 @@ p {
             .form-container {
                 padding: 2rem;
             }
+        }
+
+        .filter-section {
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+            padding: 0 3rem;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.8rem 1.8rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .filter-tab:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(94, 179, 246, 0.3);
+        }
+
+        .filter-tab.active {
+            background: #5eb3f6;
+            color: #0a0e27;
+            border-color: #5eb3f6;
+        }
+
+        .subjects-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem 4rem;
+        }
+
+        .subject-card-detailed {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+        }
+
+        .subject-card-detailed:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(94, 179, 246, 0.3);
+        }
+
+        .subject-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .subject-info h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subject-meta {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+
+        .view-resources-btn {
+            background: #5eb3f6;
+            color: #0a0e27;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .view-resources-btn:hover {
+            background: #4a9de0;
         }

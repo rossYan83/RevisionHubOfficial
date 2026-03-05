@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RevisionHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <div class="brain-logo">RH</div>
+                <div class="logo-text">RevisionHub</div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="subjects.html" class="active">Subjects</a></li>
+                <li><a href="my-experience.html">My Experience</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="ask-me.html">Ask Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <div class="subject-icon-large">📚</div>
+        <div class="header-content">
+            <h1>Browse All Subjects</h1>
+            <p class="header-description">Explore comprehensive GCSE revision resources across all major subjects and exam boards.</p>
+        </div>
+    </div>
+
+    <div class="filter-section">
+        <div class="filter-tabs">
+            <button class="filter-tab active" onclick="filterSubjects('all')">All Subjects</button>
+            <button class="filter-tab" onclick="filterSubjects('sciences')">Sciences</button>
+            <button class="filter-tab" onclick="filterSubjects('maths')">Mathematics</button>
+            <button class="filter-tab" onclick="filterSubjects('computing')">Computing</button>
+        </div>
+    </div>
+
+    <div class="subjects-container">
+        <div class="subject-card-detailed" data-category="maths">
+            <div class="subject-header">
+                <div class="subject-icon">📐</div>
+                <div class="subject-info">
+                    <h3>Mathematics</h3>
+                    <div class="subject-meta">
+                        <span class="exam-board-badge">AQA</span>
+                        <span class="topic-count">8 topics</span>
+                    </div>
+                </div>
+            </div>
+            <p>Master fundamental and advanced mathematical concepts including algebra, geometry, trigonometry, statistics, and calculus. Includes worked examples and practice questions aligned to the AQA specification.</p>
+            <a href="../subjects/mathematics.html" class="view-resources-btn">View Resources →</a>
+        </div>
+
+        <div class="subject-card-detailed" data-category="sciences">
+            <div class="subject-header">
+                <div class="subject-icon">🧬</div>
+                <div class="subject-info">
+                    <h3>Biology</h3>
+                    <div class="subject-meta">
+                        <span class="exam-board-badge">AQA</span>
+                        <span class="topic-count">7 topics</span>
+                    </div>
+                </div>
+            </div>
+            <p>Explore the science of life from cells to ecosystems. Topics include cell biology, genetics, evolution, human biology, ecology, and practical investigation techniques.</p>
+            <a href="../subjects/biology.html" class="view-resources-btn">View Resources →</a>
+        </div>
+
+        <div class="subject-card-detailed" data-category="sciences">
+            <div class="subject-header">
+                <div class="subject-icon">⚗️</div>
+                <div class="subject-info">
+                    <h3>Chemistry</h3>
+                    <div class="subject-meta">
+                        <span class="exam-board-badge">AQA</span>
+                        <span class="topic-count">10 topics</span>
+                    </div>
+                </div>
+            </div>
+            <p>Understand the composition and behavior of matter. Study atomic structure, chemical bonding, reactions, organic chemistry, and quantitative analysis with practical applications.</p>
+            <a href="../subjects/chemistry.html" class="view-resources-btn">View Resources →</a>
+        </div>
+
+        <div class="subject-card-detailed" data-category="sciences">
+            <div class="subject-header">
+                <div class="subject-icon">⚡</div>
+                <div class="subject-info">
+                    <h3>Physics</h3>
+                    <div class="subject-meta">
+                        <span class="exam-board-badge">AQA</span>
+                        <span class="topic-count">8 topics</span>
+                    </div>
+                </div>
+            </div>
+            <p>Study the fundamental laws of nature. Covers forces, energy, waves, electricity, magnetism, atomic structure, and space physics with real-world applications.</p>
+            <a href="../subjects/physics.html" class="view-resources-btn">View Resources →</a>
+        </div>
+
+        <div class="subject-card-detailed" data-category="computing">
+            <div class="subject-header">
+                <div class="subject-icon">💻</div>
+                <div class="subject-info">
+                    <h3>Computer Science</h3>
+                    <div class="subject-meta">
+                        <span class="exam-board-badge">OCR</span>
+                        <span class="topic-count">12 topics</span>
+                    </div>
+                </div>
+            </div>
+            <p>Develop computational thinking and programming skills. Study algorithms, data structures, networks, cybersecurity, and software development with Python programming.</p>
+            <a href="../subjects/computer-science.html" class="view-resources-btn">View Resources →</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 RevisionHub - Student EPQ Project</p>
+        <p>Helping students achieve their best in GCSE examinations</p>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/filter.js" ></script>
+</body>
+</html>

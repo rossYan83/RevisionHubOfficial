@@ -71,13 +71,20 @@ document.addEventListener('DOMContentLoaded', function() {
     setActiveNavLink();
 });
 function setActiveNavLink() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-links a');
     
     navLinks.forEach(link => {
         link.classList.remove('active');
-        const linkPage = link.getAttribute('href').split('/').pop();
-        if (linkPage === currentPage) {
+        const href = link.getAttribute('href');
+        const linkPage = href.split('/').pop();
+        
+        // Handle empty hrefs and index.html vs /
+        const normalizedCurrentPage = currentPage === '' ? 'index.html' : currentPage;
+        const normalizedLinkPage = linkPage === '' ? 'index.html' : linkPage;
+        
+        if (linkPage === normalizedCurrentPage || (normalizedCurrentPage === 'index.html' && href.includes('index.html'))) {
             link.classList.add('active');
         }
     });

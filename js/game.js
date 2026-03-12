@@ -1,8 +1,18 @@
-const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
+// Safety check: only run game code if canvas exists
+        const canvas = document.getElementById('gameCanvas');
+        if (!canvas) {
+            console.error('Game canvas not found. This script should only be loaded on game.html');
+        }
+        
+        const ctx = canvas ? canvas.getContext('2d') : null;
         const scoreElement = document.getElementById('score');
         const gameOverElement = document.getElementById('gameOver');
         const finalScoreElement = document.getElementById('finalScore');
+
+        // Exit if required elements are missing
+        if (!canvas || !ctx || !scoreElement || !gameOverElement || !finalScoreElement) {
+            console.error('Game elements missing');
+        }
 
         const TILE_COUNT = 20; // Fixed tiles for consistent gameplay
         let gridSize;
@@ -36,7 +46,9 @@ const canvas = document.getElementById('gameCanvas');
         randomFood();
 
         // Keyboard controls
-        document.addEventListener('keydown', changeDirection);
+        if (canvas) {
+            document.addEventListener('keydown', changeDirection);
+        }
 
         function changeDirection(event) {
             const LEFT_KEY = 37;
@@ -65,42 +77,45 @@ const canvas = document.getElementById('gameCanvas');
         }
 
         // Touch/swipe controls for mobile
-        canvas.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            touchStartX = e.changedTouches[0].screenX;
-            touchStartY = e.changedTouches[0].screenY;
-        }, { passive: false });
+        if (canvas) {
+            canvas.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+            }, { passive: false });
 
-        canvas.addEventListener('touchend', (e) => {
-            e.preventDefault();
-            const touchEndX = e.changedTouches[0].screenX;
-            const touchEndY = e.changedTouches[0].screenY;
-            const deltaX = touchEndX - touchStartX;
-            const deltaY = touchEndY - touchStartY;
+            canvas.addEventListener('touchend', (e) => {
+                if (!gameRunning) return;
+                e.preventDefault();
+                const touchEndX = e.changedTouches[0].screenX;
+                const touchEndY = e.changedTouches[0].screenY;
+                const deltaX = touchEndX - touchStartX;
+                const deltaY = touchEndY - touchStartY;
 
-            const goingUp = dy === -1;
-            const goingDown = dy === 1;
-            const goingRight = dx === 1;
-            const goingLeft = dx === -1;
+                const goingUp = dy === -1;
+                const goingDown = dy === 1;
+                const goingRight = dx === 1;
+                const goingLeft = dx === -1;
 
-            const SWIPE_THRESHOLD = 40; // Min swipe distance
+                const SWIPE_THRESHOLD = 40; // Min swipe distance
 
-            if (Math.abs(deltaX) > Math.abs(deltaY)) {
-                // Horizontal swipe
-                if (deltaX > SWIPE_THRESHOLD && !goingLeft) {
-                    dx = 1; dy = 0;
-                } else if (deltaX < -SWIPE_THRESHOLD && !goingRight) {
-                    dx = -1; dy = 0;
+                if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                    // Horizontal swipe
+                    if (deltaX > SWIPE_THRESHOLD && !goingLeft) {
+                        dx = 1; dy = 0;
+                    } else if (deltaX < -SWIPE_THRESHOLD && !goingRight) {
+                        dx = -1; dy = 0;
+                    }
+                } else {
+                    // Vertical swipe
+                    if (deltaY > SWIPE_THRESHOLD && !goingUp) {
+                        dx = 0; dy = 1;
+                    } else if (deltaY < -SWIPE_THRESHOLD && !goingDown) {
+                        dx = 0; dy = -1;
+                    }
                 }
-            } else {
-                // Vertical swipe
-                if (deltaY > SWIPE_THRESHOLD && !goingUp) {
-                    dx = 0; dy = 1;
-                } else if (deltaY < -SWIPE_THRESHOLD && !goingDown) {
-                    dx = 0; dy = -1;
-                }
-            }
-        }, { passive: false });
+            }, { passive: false });
+        }
 
         function drawGame() {
             // Clear canvas with dark background
@@ -183,5 +198,7 @@ const canvas = document.getElementById('gameCanvas');
             drawGame();
         }
 
-        // Start the game
-        drawGame();
+        // Start the game only if canvas exists
+        if (canvas && ctx && gameRunning !== undefined) {
+            drawGame();
+        }

@@ -3,24 +3,37 @@
             emailjs.init("001fh5cX5stgnhi7K");
         })();
 
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-
-        function closeMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.remove('active');
-        }
-
         function handleSubmit() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const question = document.getElementById('question').value;
+            const nameEl = document.getElementById('name');
+            const emailEl = document.getElementById('email');
+            const questionEl = document.getElementById('question');
             const submitBtn = document.querySelector('.submit-btn');
+
+            // Safety checks for form elements
+            if (!nameEl || !emailEl || !questionEl) {
+                console.error('Form elements not found');
+                alert('Error: Form elements missing. Please refresh the page.');
+                return;
+            }
+
+            const name = nameEl.value.trim();
+            const email = emailEl.value.trim();
+            const question = questionEl.value.trim();
 
             if (!name || !email || !question) {
                 alert('Please fill in all fields');
+                return;
+            }
+
+            // Basic email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+
+            if (!submitBtn) {
+                console.error('Submit button not found');
                 return;
             }
 
@@ -36,17 +49,24 @@
             .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);
                 
-                document.getElementById('successMessage').classList.add('show');
+                const successMsg = document.getElementById('successMessage');
+                if (successMsg) {
+                    successMsg.classList.add('show');
+                }
 
-                document.getElementById('name').value = '';
-                document.getElementById('email').value = '';
-                document.getElementById('question').value = '';
+                if (nameEl) nameEl.value = '';
+                if (emailEl) emailEl.value = '';
+                if (questionEl) questionEl.value = '';
 
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Question';
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Question';
+                }
 
                 setTimeout(() => {
-                    document.getElementById('successMessage').classList.remove('show');
+                    if (successMsg) {
+                        successMsg.classList.remove('show');
+                    }
                 }, 5000);
             }, function(error) {
                 console.log('FAILED...', error);

@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RevisionHub</title>
+    <title>Browse All Subjects - RevisionHub</title>
+    <meta name="description" content="Explore comprehensive GCSE revision resources across Mathematics, Sciences, and Computer Science. Filter by subject and find exam board-specific study materials.">
     <link rel="icon" type="image/x-icon" href="../assets/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
@@ -17,7 +18,7 @@
                 <div class="brain-logo">RH</div>
                 <div class="logo-text">RevisionHub</div>
             </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <button type="button" class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="subjects.html" class="active">Subjects</a></li>
@@ -38,10 +39,10 @@
 
     <div class="filter-section">
         <div class="filter-tabs">
-            <button class="filter-tab active" onclick="filterSubjects('all')">All Subjects</button>
-            <button class="filter-tab" onclick="filterSubjects('sciences')">Sciences</button>
-            <button class="filter-tab" onclick="filterSubjects('maths')">Mathematics</button>
-            <button class="filter-tab" onclick="filterSubjects('computing')">Computing</button>
+            <button type="button" class="filter-tab active" onclick="filterSubjects('all')">All Subjects</button>
+            <button type="button" class="filter-tab" onclick="filterSubjects('sciences')">Sciences</button>
+            <button type="button" class="filter-tab" onclick="filterSubjects('maths')">Mathematics</button>
+            <button type="button" class="filter-tab" onclick="filterSubjects('computing')">Computing</button>
         </div>
     </div>
 

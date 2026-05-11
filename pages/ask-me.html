@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="../assets/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="../css/main.css">
 </head>
@@ -19,7 +19,7 @@
                 <div class="brain-logo">RH</div>
                 <div class="logo-text">RevisionHub</div>
             </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <button type="button" class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="./subjects.html">Subjects</a></li>
@@ -27,7 +27,7 @@
                 <li><a href="./about.html">About</a></li>
                 <li><a href="./ask-me.html" class="active">Ask Me</a></li>
             </ul>
-            </div>
+        </nav>
     </header>
 
     <div class="ask-me">
@@ -50,7 +50,7 @@
                 <textarea id="question" placeholder="What would you like to know?" required></textarea>
             </div>
 
-            <button class="submit-btn" onclick="handleSubmit()">Send Question</button>
+            <button type="button" class="submit-btn" onclick="handleSubmit()">Send Question</button>
 
             <div class="success-message" id="successMessage">
                 ✓ Thanks for your question! I'll get back to you soon.
